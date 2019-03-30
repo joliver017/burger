@@ -1,4 +1,15 @@
-<h1>Burgers!</h1>
+<h1 class="uk-text-center">Burgers!</h1>
+
+<div class="uk-container uk-align-center">
+    <h2 class="uk-text-center">Add a Burger</h2>
+    {{!-- This adds a burger to the list --}}
+    <form class="uk-text-center" action="/burgers" method="POST">
+        <input type="text" id="name" name="burger_name" placeholder="Add a burger">
+        <button type="submit" class="addBurgerButton">Add New Burger</button>
+    </form>
+</div>
+
+<div class="uk-text-center uk-column-1-2 uk-column-divider">
 
 <h2>Burgers to Eat!</h2>
 
@@ -29,8 +40,5 @@
   {{/each}}
 </ul>
 
-<h2>Add a Burger</h2>
-<form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="Add a burger">
-      <button type="submit" class="addBurgerButton">Add New Burger</button>
-</form>
+</div>
+
