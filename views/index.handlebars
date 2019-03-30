@@ -1,0 +1,36 @@
+<h1>Burgers!</h1>
+
+<h2>Burgers to Eat!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+        <div>
+            <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+            </form>
+        </div>
+    {{/unless}}
+  {{/each}}
+  
+</ul>
+
+<h2>Burgers Eaten!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+       <div class='burgerEaten'>
+            <div>
+                {{this.burger_name}}
+            </div>
+        </div>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form action="/burgers" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder="Add a burger">
+      <button type="submit" class="addBurgerButton">Add New Burger</button>
+</form>
