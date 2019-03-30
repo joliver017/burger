@@ -9,8 +9,8 @@
     </form>
 </div>
 
-<div class="uk-text-center uk-column-1-2 uk-column-divider">
-
+<div class="uk-text-center uk-grid uk-grid-divider">
+<div class="uk-width-1-2">
 <h2>Burgers to Eat!</h2>
 
 <ul>
@@ -18,14 +18,16 @@
     {{#unless this.devoured}}
         <div>
             <form action="/burgers/{{this.id}}" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+                <button type="submit" class='uk-button uk-button-default'> {{this.burger_name}}</button>
             </form>
         </div>
     {{/unless}}
   {{/each}}
   
 </ul>
+</div>
 
+<div class="uk-width-1-2">
 <h2>Burgers Eaten!</h2>
 
 <ul>
@@ -39,6 +41,7 @@
     {{/if}}
   {{/each}}
 </ul>
+</div>
 
 </div>
 
