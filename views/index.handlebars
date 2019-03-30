@@ -4,9 +4,9 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
+    {{#unless this.devoured}}
         <div>
-            <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <form action="/burgers/{{this.id}}?_method=PUT" method="PUT">
                 <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
             </form>
         </div>
@@ -19,7 +19,7 @@
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
+    {{#if this.devoured}}
        <div class='burgerEaten'>
             <div>
                 {{this.burger_name}}
